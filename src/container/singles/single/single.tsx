@@ -12,6 +12,7 @@ import { TPostCard } from '@/components/Card2/Card2';
 import SingleRelatedPosts from '@/container/singles/SingleRelatedPosts';
 import { GET_RELATED_POSTS } from '@/container/singles/single/related';
 import PostCardLikeAndComment from '@/components/PostCardLikeAndComment/PostCardLikeAndComment'
+import PostMeta2 from '@/components/PostMeta2/PostMeta2'
 
 
 export interface SingleType1Props {
@@ -30,8 +31,6 @@ const SingleType1: FC<SingleType1Props> = ({ post, showRightSidebar }) => {
         excerpt,
         featuredImage,
         ncPostMetaData,
-	commentCount,
-	uri,
     } = getPostDataFromPostFragment(post || {});
 
     // Fetch related posts
@@ -96,16 +95,12 @@ const SingleType1: FC<SingleType1Props> = ({ post, showRightSidebar }) => {
                                                     </div>
                                                 </div>
                                                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
-						    <PostCardLikeAndComment
-							    hiddenCommentOnMobile={false}
-							    useOnSinglePage
-							    commentCount={commentCount || 0}
-							    likeCount={ncPostMetaData?.likesCount || 0}
-							    postDatabseId={databaseId}
-							    linkToPost={uri}
-							    showViewCount={NC_SITE_SETTINGS['single_page']?.show_view_cout}
-							    showCommentCount={NC_SITE_SETTINGS['single_page']?.show_comment_count}
-							    viewCount={ncPostMetaData?.viewsCount || 1}
+						    <PostMeta2
+							size="large"
+							className="flex-shrink-0 leading-none"
+							hiddenCategories
+							avatarRounded="rounded-full shadow-inner"
+							post={{ ...post }}
 						    />
                                                     <PostCardMeta
                                                         className="text-sm"
