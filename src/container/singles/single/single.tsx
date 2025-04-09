@@ -12,8 +12,7 @@ import { TPostCard } from '@/components/Card2/Card2';
 import SingleRelatedPosts from '@/container/singles/SingleRelatedPosts';
 import { GET_RELATED_POSTS } from '@/container/singles/single/related';
 import PostCardLikeAndComment from '@/components/PostCardLikeAndComment/PostCardLikeAndComment'
-import PostMeta2 from '@/components/PostMeta2/PostMeta2'
-
+import SingleHeader from '../SingleHeader'
 
 export interface SingleType1Props {
     post: FragmentTypePostFullFields;
@@ -95,13 +94,10 @@ const SingleType1: FC<SingleType1Props> = ({ post, showRightSidebar }) => {
                                                     </div>
                                                 </div>
                                                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
-						    <PostMeta2
-							size="large"
-							className="flex-shrink-0 leading-none"
-							hiddenCategories
-							avatarRounded="rounded-full shadow-inner"
-							post={{ ...post }}
-						    />
+							<SingleHeader post={{ ...post }} />
+							{!hasFeaturedImage && (
+								<div className="my-5 border-b border-neutral-200 dark:border-neutral-800" />
+							)}
                                                     <PostCardMeta
                                                         className="text-sm"
                                                         meta={{ date, author }}
