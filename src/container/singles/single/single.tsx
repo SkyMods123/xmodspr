@@ -11,6 +11,7 @@ import { gql, useQuery } from '@apollo/client';
 import { TPostCard } from '@/components/Card2/Card2';
 import SingleRelatedPosts from '@/container/singles/SingleRelatedPosts';
 import { GET_RELATED_POSTS } from '@/container/singles/single/related';
+import PageLayout from '@/container/PageLayout'
 
 export interface SingleType1Props {
     post: FragmentTypePostFullFields;
@@ -92,6 +93,9 @@ const SingleType1: FC<SingleType1Props> = ({ post, showRightSidebar }) => {
                                                     </div>
                                                 </div>
                                                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                                                    <PageLayout
+				                                        headerMenuItems={props.data?.primaryMenuItems?.nodes || []}
+                                                    >
                                                     <PostCardMeta
                                                         className="text-sm"
                                                         meta={{ date, author }}
