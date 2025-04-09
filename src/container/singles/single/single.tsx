@@ -190,7 +190,7 @@ const SingleType1: FC<SingleType1Props> = ({ post, showRightSidebar }) => {
                                         </div>
                                         <div className="p-6 pt-0 space-y-4">
                                             <div className="flex flex-col gap-2">
-                                                <h2 className="description prose prose-invert max-w-none text-neutral-900 dark:text-neutral-100">{excerpt}</h2>
+                                                <h2 className="description prose prose-invert max-w-none text-neutral-900 dark:text-neutral-100">{excerpt || ''}</h2>
                                             </div>
                                         </div>
                                     </div>
