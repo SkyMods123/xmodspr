@@ -19,7 +19,7 @@ export interface SingleType1Props {
     showRightSidebar?: boolean;
 }
 
-const SingleType1: FC<SingleType1Props> = ({commentCount, uri, author, databaseId, post, showRightSidebar }) => {
+const SingleType1: FC<SingleType1Props> = ({commentCount, uri, post, showRightSidebar }) => {
     const {
         title,
         content,
