@@ -95,7 +95,6 @@ const SingleType1: FC<SingleType1Props> = ({ post, showRightSidebar }) => {
                                                 </div>
                                                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
 						    <PostCardLikeAndComment
-							    k
 							    hiddenCommentOnMobile={false}
 							    useOnSinglePage
 							    commentCount={commentCount || 0}
