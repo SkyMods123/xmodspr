@@ -19,7 +19,7 @@ export interface SingleType1Props {
     showRightSidebar?: boolean;
 }
 
-const SingleType1: FC<SingleType1Props> = ({commentCount, uri, post, showRightSidebar }) => {
+const SingleType1: FC<SingleType1Props> = ({ post, showRightSidebar }) => {
     const {
         title,
         content,
@@ -30,6 +30,8 @@ const SingleType1: FC<SingleType1Props> = ({commentCount, uri, post, showRightSi
         excerpt,
         featuredImage,
         ncPostMetaData,
+	commentCount,
+	uri,
     } = getPostDataFromPostFragment(post || {});
 
     // Fetch related posts
