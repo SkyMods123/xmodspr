@@ -19,6 +19,34 @@ import SocialsShareDropdown from '@/components/SocialsShareDropdown/SocialsShare
 import PostActionDropdown from '@/components/PostActionDropdown/PostActionDropdown'
 import SingleCommentWrap from '@/container/singles/SingleCommentWrap'
 
+const GET_RELATED_POSTS = gql`
+  query GetRelatedPosts($databaseId: Int!) {
+    posts(where: { isRelatedOfPostId: $databaseId }, first: 4) {
+      nodes {
+        databaseId
+        title
+        uri
+        date
+        excerpt
+        featuredImage {
+          node {
+            sourceUrl
+            altText
+          }
+        }
+        author {
+          node {
+            name
+            uri
+            avatar {
+              url
+            }
+          }
+        }
+      }
+    }
+  }
+`;
 
 export interface SingleType1Props {
     post: FragmentTypePostFullFields;
@@ -41,13 +69,13 @@ const SingleType1: FC<SingleType1Props> = ({ post, showRightSidebar }) => {
         commentStatus,
     } = getPostDataFromPostFragment(post || {});
 
-    // Fetch related posts
+     // Fetch related posts
     const { data: relatedPostsData, loading, error } = useQuery(GET_RELATED_POSTS, {
-      variables: { databaseId: Number(databaseId) },
-      skip: !databaseId
+        variables: { databaseId: Number(databaseId) },
+        skip: !databaseId
     });
 
-    const relatedPosts = (relatedPostsData?.posts?.nodes || []).slice(0, 4);
+    const relatedPosts = relatedPostsData?.posts?.nodes || [];
 
     // Hook za meta podatke
     const { loading: loadingRelatedMeta } = useGetPostsNcmazMetaByIds({
