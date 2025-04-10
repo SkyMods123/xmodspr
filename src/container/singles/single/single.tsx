@@ -64,10 +64,11 @@ const SingleType1: FC<SingleType1Props> = ({ post, showRightSidebar }) => {
                                 <header className="!mt-0">
                                     <div className="rounded-lg border text-card-foreground shadow-sm bg-card/70 backdrop-blur-sm">
                                         <div className="flex flex-col space-y-1.5 p-6 pb-4">
-                                            <div className="flex flex-col gap-1 -bottom-[3px]">
+                                            <div className="flex flex-col gap-1">
 						    <CategoryBadgeList
 								itemClass="!px-3"
 								categories={categories?.nodes || []}
+							    	className="-bottom-[3px]"
 							/>
                                                 <div className="flex items-center justify-between gap-3">
                                                     <div className="flex min-w-0 items-center gap-3">
