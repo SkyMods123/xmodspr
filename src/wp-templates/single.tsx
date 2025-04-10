@@ -212,6 +212,7 @@ Component.variables = ({ databaseId }, ctx) => {
 	return {
 		databaseId,
 		post_databaseId: Number(databaseId || 0),
+		asPreview: ctx?.asPreview,
 		headerLocation: PRIMARY_LOCATION,
 		footerLocation: FOOTER_LOCATION,
 	}
