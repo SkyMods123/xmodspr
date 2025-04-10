@@ -218,35 +218,6 @@ Component.variables = ({ databaseId }, ctx) => {
 	}
 }
 
-Component.query = gql(`
-  query GetPostSiglePage($databaseId: ID!, $post_databaseId: Int,$asPreview: Boolean = false, $headerLocation: MenuLocationEnum!, $footerLocation: MenuLocationEnum!) {
-    post(id: $databaseId, idType: DATABASE_ID, asPreview: $asPreview) {
-		...NcmazFcPostFullVsEditorBlocksNoContentFields
-    }
-    posts(where: {isRelatedOfPostId:$post_databaseId}) {
-      nodes {
-      ...PostCardFieldsNOTNcmazMEDIA
-      }
-    }
-    categories(first:10, where: { orderby: COUNT, order: DESC }) {
-      nodes {
-        ...NcmazFcCategoryFullFieldsFragment
-      }
-    }
-    generalSettings {
-      ...NcgeneralSettingsFieldsFragment
-    }
-    primaryMenuItems: menuItems(where: {location:$headerLocation}, first: 80) {
-      nodes {
-        ...NcPrimaryMenuFieldsFragment
-      }
-    }
-    footerMenuItems: menuItems(where: {location:$footerLocation}, first: 40) {
-      nodes {
-        ...NcFooterMenuFieldsFragment
-      }
-    }
-  }
-`)
+
 
 export default Component
