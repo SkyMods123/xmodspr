@@ -14,6 +14,7 @@ import { GET_RELATED_POSTS } from '@/container/singles/single/related';
 import PostCardLikeAndComment from '@/components/PostCardLikeAndComment/PostCardLikeAndComment'
 import NcBookmark from '@/components/NcBookmark/NcBookmark'
 import PostCardLikeAction2 from '@/components/PostCardLikeAction/PostCardLikeAction2'
+import Tag from '@/components/Tag/Tag'
 
 export interface SingleType1Props {
     post: FragmentTypePostFullFields;
@@ -204,6 +205,29 @@ const SingleType1: FC<SingleType1Props> = ({ post, showRightSidebar }) => {
                                             <div className="flex flex-col gap-2">
                                                 <h2 className="description prose prose-invert max-w-none text-neutral-900 dark:text-neutral-100">{excerpt || ''}</h2>
                                             </div>
+                                        </div>
+                                    </div>
+                                </section>
+				<section className="script-description">
+                                    <div className="rounded-lg border bg-card text-card-foreground shadow-sm">
+                                        <div className="flex flex-col space-y-1.5 p-6">
+                                            <div className="text-2xl font-semibold leading-none tracking-tight">
+                                                <h2>Description</h2>
+                                            </div>
+                                        </div>
+                                        {tags?.nodes?.length ? (
+						<div className="mx-auto flex max-w-screen-md flex-wrap">
+							{tags.nodes.map((item) => (
+								<Tag
+									hideCount
+									key={item.databaseId}
+									name={'#' + (item.name || '')}
+									uri={item.uri || ''}
+									className="mb-2 me-2 border border-neutral-200 dark:border-neutral-800"
+								/>
+							))}
+						</div>
+					) : null}
                                         </div>
                                     </div>
                                 </section>
