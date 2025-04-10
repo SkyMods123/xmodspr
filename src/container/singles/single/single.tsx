@@ -131,7 +131,7 @@ const SingleType1: FC<SingleType1Props> = ({ post, showRightSidebar }) => {
                                                         		className="text-sm"
                                                         		meta={{ date, author }}
                                                        	 		hiddenAvatar={false}
-                                                        		avatarSize="h-12 w-12 text-sm"
+                                                        		avatarSize="h-10 w-10 text-sm"
                                                     		    />
                                                                 <span className="flex cursor-pointer items-center gap-1 text-base font-medium text-foreground hover:text-primary">
                                                                     viewCount
