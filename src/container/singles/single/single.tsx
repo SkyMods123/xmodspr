@@ -208,6 +208,30 @@ const SingleType1: FC<SingleType1Props> = ({ post, showRightSidebar }) => {
                                     <div className="rounded-lg border bg-card text-card-foreground shadow-sm">
                                         <div className="flex flex-col space-y-1.5 p-6">
                                             <div className="text-2xl font-semibold leading-none tracking-tight">
+                                                <h2>Comments</h2>
+                                            </div>
+                                        </div>
+                                        <div className="p-6 pt-0 space-y-4">
+                                            <div className="flex flex-col gap-2">
+						    {commentStatus === 'open' ? (
+								<div
+									id="comments"
+									className="scroll-mt-10 sm:scroll-mt-20"
+								>
+									<SingleCommentWrap
+										commentCount={commentCount || 0}
+										postDatabaseId={databaseId}
+									/>
+								</div>
+						   ) : null}					    
+					    </div>
+                                        </div>
+                                    </div>
+                                </section>
+				<section className="script-description">
+                                    <div className="rounded-lg border bg-card text-card-foreground shadow-sm">
+                                        <div className="flex flex-col space-y-1.5 p-6">
+                                            <div className="text-2xl font-semibold leading-none tracking-tight">
                                                 <h2>Tags</h2>
                                             </div>
                                         </div>
@@ -228,30 +252,6 @@ const SingleType1: FC<SingleType1Props> = ({ post, showRightSidebar }) => {
 							</div>
 						) : null}
                                             </div>
-                                        </div>
-                                    </div>
-                                </section>
-				<section className="script-description">
-                                    <div className="rounded-lg border bg-card text-card-foreground shadow-sm">
-                                        <div className="flex flex-col space-y-1.5 p-6">
-                                            <div className="text-2xl font-semibold leading-none tracking-tight">
-                                                <h2>Comments</h2>
-                                            </div>
-                                        </div>
-                                        <div className="p-6 pt-0 space-y-4">
-                                            <div className="flex flex-col gap-2">
-						    {commentStatus === 'open' ? (
-								<div
-									id="comments"
-									className="scroll-mt-10 sm:scroll-mt-20"
-								>
-									<SingleCommentWrap
-										commentCount={commentCount || 0}
-										postDatabaseId={databaseId}
-									/>
-								</div>
-						   ) : null}					    
-					    </div>
                                         </div>
                                     </div>
                                 </section>
