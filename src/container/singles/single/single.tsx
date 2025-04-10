@@ -9,7 +9,7 @@ import PostCardMeta from '@/components/PostCardMeta/PostCardMeta';
 import useGetPostsNcmazMetaByIds from "@/hooks/useGetPostsNcmazMetaByIds";
 import { gql, useQuery } from '@apollo/client';
 import { TPostCard } from '@/components/Card2/Card2';
-import SingleRelatedPosts from '@/container/singles/SingleRelatedPosts';
+import SingleRelatedPosts2 from '@/container/singles/SingleRelatedPosts2';
 import { GET_RELATED_POSTS } from '@/container/singles/single/related';
 import PostCardLikeAndComment from '@/components/PostCardLikeAndComment/PostCardLikeAndComment'
 import NcBookmark from '@/components/NcBookmark/NcBookmark'
@@ -259,7 +259,7 @@ const SingleType1: FC<SingleType1Props> = ({ post, showRightSidebar }) => {
                             <aside className="script-similar-scripts lg:col-span-1">
                                 <div className="rounded-lg border text-card-foreground shadow-sm sticky top-15 bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 lg:w-[400px] h-[900px] ">
                                     <div className="flex flex-col space-y-1.5 p-6 pb-3">
-                                      <SingleRelatedPosts
+                                      <SingleRelatedPosts2
                                         posts={relatedPosts}
                                         postDatabaseId={databaseId}
                                       />
