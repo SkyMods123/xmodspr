@@ -12,7 +12,7 @@ import { TPostCard } from '@/components/Card2/Card2';
 import SingleRelatedPosts from '@/container/singles/SingleRelatedPosts';
 import { GET_RELATED_POSTS } from '@/container/singles/single/related';
 import PostCardLikeAndComment from '@/components/PostCardLikeAndComment/PostCardLikeAndComment'
-import SingleHeader from '../SingleHeader'
+import NcBookmark from '@/components/NcBookmark/NcBookmark'
 
 export interface SingleType1Props {
     post: FragmentTypePostFullFields;
@@ -94,10 +94,10 @@ const SingleType1: FC<SingleType1Props> = ({ post, showRightSidebar }) => {
                                                     </div>
                                                 </div>
                                                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
-							<SingleHeader post={{ ...post }} />
-							{!hasFeaturedImage && (
-								<div className="my-5 border-b border-neutral-200 dark:border-neutral-800" />
-							)}
+							<NcBookmark
+								postDatabseId={databaseId}
+								containerClassName="h-9 w-9 bg-neutral-50 hover:bg-neutral-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-200"
+							/>
                                                     <PostCardMeta
                                                         className="text-sm"
                                                         meta={{ date, author }}
