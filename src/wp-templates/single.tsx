@@ -24,6 +24,7 @@ import { useRouter } from 'next/router'
 import { TCategoryCardFull } from '@/components/CardCategory1/CardCategory1'
 import SingleTypeAudio from '@/container/singles/single-audio/single-audio'
 import SingleTypeVideo from '@/container/singles/single-video/single-video'
+import SingleTypeGallery from '@/container/singles/single-gallery/single-gallery'
 
 const DynamicSingleRelatedPosts = dynamic(
 	() => import('@/container/singles/SingleRelatedPosts'),
@@ -150,6 +151,9 @@ const Component: FaustTemplate<GetPostSiglePageQuery> = (props) => {
 		}
 		if (postFormats === 'video') {
 			return <SingleTypeVideo post={pData} />
+		}
+		if (postFormats === 'gallery') {
+			return <SingleTypeGallery post={pData} />
 		}
 
 		if (ncPostMetaData?.template?.[0] === 'style2') {
