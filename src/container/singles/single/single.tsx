@@ -13,7 +13,7 @@ import SingleRelatedPosts from '@/container/singles/SingleRelatedPosts';
 import { GET_RELATED_POSTS } from '@/container/singles/single/related';
 import PostCardLikeAndComment from '@/components/PostCardLikeAndComment/PostCardLikeAndComment'
 import NcBookmark from '@/components/NcBookmark/NcBookmark'
-import PostCardLikeAction2 from '@/components/PostCardLikeAction/PostCardLikeAction2'
+import PostCardLikeAction from '@/components/PostCardLikeAction/PostCardLikeAction'
 
 export interface SingleType1Props {
     post: FragmentTypePostFullFields;
@@ -159,7 +159,7 @@ const SingleType1: FC<SingleType1Props> = ({ post, showRightSidebar }) => {
 								postDatabseId={databaseId}
 								containerClassName="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 text-primary-foreground h-10 px-4 bg-neutral-50 hover:bg-neutral-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-200 border border-input"
 							/>
-							    <PostCardLikeAction2
+							    <PostCardLikeAction
 								likeCount={ncPostMetaData?.likesCount || 0}
 								postDatabseId={databaseId}
 								className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 text-primary-foreground h-10 px-4 bg-neutral-50 hover:bg-neutral-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-200 border border-input rounded-full"
