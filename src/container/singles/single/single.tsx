@@ -215,19 +215,13 @@ const SingleType1: FC<SingleType1Props> = ({ post, showRightSidebar }) => {
                                                 <h2>Description</h2>
                                             </div>
                                         </div>
-                                        {tags?.nodes?.length ? (
-						<div className="mx-auto flex max-w-screen-md flex-wrap">
-							{tags.nodes.map((item) => (
-								<Tag
-									hideCount
-									key={item.databaseId}
-									name={'#' + (item.name || '')}
-									uri={item.uri || ''}
-									className="mb-2 me-2 border border-neutral-200 dark:border-neutral-800"
-								/>
-							))}
-						</div>
-					) : null}
+					    <Tag
+							hideCount
+							key={item.databaseId}
+							name={'#' + (item.name || '')}
+							uri={item.uri || ''}
+							className="mb-2 me-2 border border-neutral-200 dark:border-neutral-800"
+					     />
                                         </div>
                                     </div>
                                 </section>
