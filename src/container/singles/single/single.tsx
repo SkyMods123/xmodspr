@@ -15,6 +15,8 @@ import PostCardLikeAndComment from '@/components/PostCardLikeAndComment/PostCard
 import NcBookmark from '@/components/NcBookmark/NcBookmark'
 import PostCardLikeAction2 from '@/components/PostCardLikeAction/PostCardLikeAction2'
 import CategoryBadgeList from '@/components/CategoryBadgeList/CategoryBadgeList'
+import SocialsShareDropdown from '@/components/SocialsShareDropdown/SocialsShareDropdown'
+
 
 export interface SingleType1Props {
     post: FragmentTypePostFullFields;
@@ -133,9 +135,9 @@ const SingleType1: FC<SingleType1Props> = ({ post, showRightSidebar }) => {
                                                        	 		hiddenAvatar={false}
                                                         		avatarSize="h-10 w-10 text-sm"
                                                     		    />
-                                                                <span className="flex cursor-pointer items-center gap-1 text-base font-medium text-foreground hover:text-primary">
-                                                                    viewCount
-                                                                </span>
+                                                            </a>
+							    <a className="flex items-center gap-2" href="https://rscripts.net/@0x256">
+								    <SocialsShareDropdown />
                                                             </a>
                                                         </div>
                                                     </div>
