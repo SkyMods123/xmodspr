@@ -162,7 +162,7 @@ const SingleType1: FC<SingleType1Props> = ({ post, showRightSidebar }) => {
 							    <PostCardLikeAction2
 								likeCount={ncPostMetaData?.likesCount || 0}
 								postDatabseId={databaseId}
-								className="relative flex items-center text-xs leading-none transition-colors inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 text-primary-foreground h-10 px-4 bg-neutral-50 hover:bg-neutral-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-200 border border-input rounded-full text-rose-600 dark:text-rose-500"
+								className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 text-primary-foreground h-10 px-4 bg-neutral-50 hover:bg-neutral-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-200 border border-input rounded-full"
 							/>
                                                         <button
                                                             className="inline-flex items-center transition-colors hover:bg-neutral-50 dark:hover:bg-neutral-800 justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border border-input bg-background hover:text-accent-foreground h-10 px-4 py-2 col-span-2 transition-colors duration-200 hover:bg-accent"
@@ -211,6 +211,10 @@ const SingleType1: FC<SingleType1Props> = ({ post, showRightSidebar }) => {
                             <aside className="script-similar-scripts lg:col-span-1">
                                 <div className="rounded-lg border text-card-foreground shadow-sm sticky top-15 bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 lg:w-[400px] h-[900px] ">
                                     <div className="flex flex-col space-y-1.5 p-6 pb-3">
+                                      <SingleRelatedPosts
+                                        posts={relatedPosts}
+                                        postDatabaseId={databaseId}
+                                      />
                                     </div>
                                 </div>
                             </aside>
