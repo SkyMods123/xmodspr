@@ -14,6 +14,7 @@ import { GET_RELATED_POSTS } from '@/container/singles/single/related';
 import PostCardLikeAndComment from '@/components/PostCardLikeAndComment/PostCardLikeAndComment'
 import NcBookmark from '@/components/NcBookmark/NcBookmark'
 import PostCardLikeAction2 from '@/components/PostCardLikeAction/PostCardLikeAction2'
+import CategoryBadgeList from '@/components/CategoryBadgeList/CategoryBadgeList'
 
 export interface SingleType1Props {
     post: FragmentTypePostFullFields;
@@ -76,6 +77,10 @@ const SingleType1: FC<SingleType1Props> = ({ post, showRightSidebar }) => {
                                         <div className="flex flex-col space-y-1.5 p-6 pb-4">
                                             <div className="flex flex-col gap-1">
                                                 <div className="flex items-center justify-between gap-3">
+							<CategoryBadgeList
+								itemClass="!px-3"
+								categories={categories?.nodes || []}
+							/>
                                                     <div className="flex min-w-0 items-center gap-3">
                                                         <img
                                                             alt="Game icon"
