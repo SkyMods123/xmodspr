@@ -77,11 +77,11 @@ const SingleType1: FC<SingleType1Props> = ({ post, showRightSidebar }) => {
                                     <div className="rounded-lg border text-card-foreground shadow-sm bg-card/70 backdrop-blur-sm">
                                         <div className="flex flex-col space-y-1.5 p-6 pb-4">
                                             <div className="flex flex-col gap-1">
-                                                <div className="flex items-center justify-between gap-3">
-							<CategoryBadgeList
+						    <CategoryBadgeList
 								itemClass="!px-3"
 								categories={categories?.nodes || []}
 							/>
+                                                <div className="flex items-center justify-between gap-3">
                                                     <div className="flex min-w-0 items-center gap-3">
                                                         <img
                                                             alt="Game icon"
