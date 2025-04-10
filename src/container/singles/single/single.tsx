@@ -208,23 +208,6 @@ const SingleType1: FC<SingleType1Props> = ({ post, showRightSidebar }) => {
                                         </div>
                                     </div>
                                 </section>
-				<section className="script-description">
-                                    <div className="rounded-lg border bg-card text-card-foreground shadow-sm">
-                                        <div className="flex flex-col space-y-1.5 p-6">
-                                            <div className="text-2xl font-semibold leading-none tracking-tight">
-                                                <h2>Description</h2>
-                                            </div>
-                                        </div>
-					    <Tag
-							hideCount
-							key={item.databaseId}
-							name={'#' + (item.name || '')}
-							uri={item.uri || ''}
-							className="mb-2 me-2 border border-neutral-200 dark:border-neutral-800"
-					     />
-                                        </div>
-                                    </div>
-                                </section>
                             </div>
                             <aside className="script-similar-scripts lg:col-span-1">
                                 <div className="rounded-lg border text-card-foreground shadow-sm sticky top-15 bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 lg:w-[400px] h-[900px] ">
