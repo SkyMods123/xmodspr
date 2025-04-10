@@ -17,7 +17,7 @@ import PostCardLikeAction2 from '@/components/PostCardLikeAction/PostCardLikeAct
 import CategoryBadgeList from '@/components/CategoryBadgeList/CategoryBadgeList'
 import SocialsShareDropdown from '@/components/SocialsShareDropdown/SocialsShareDropdown'
 import PostActionDropdown from '@/components/PostActionDropdown/PostActionDropdown'
-import SingleCommentWrap from './SingleCommentWrap'
+import SingleCommentWrap from '@/container/singles/SingleCommentWrap'
 
 
 export interface SingleType1Props {
