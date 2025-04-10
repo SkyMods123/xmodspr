@@ -16,6 +16,7 @@ import NcBookmark from '@/components/NcBookmark/NcBookmark'
 import PostCardLikeAction2 from '@/components/PostCardLikeAction/PostCardLikeAction2'
 import CategoryBadgeList from '@/components/CategoryBadgeList/CategoryBadgeList'
 import SocialsShareDropdown from '@/components/SocialsShareDropdown/SocialsShareDropdown'
+import PostActionDropdown from '@/components/PostActionDropdown/PostActionDropdown'
 
 
 export interface SingleType1Props {
@@ -128,7 +129,7 @@ const SingleType1: FC<SingleType1Props> = ({ post, showRightSidebar }) => {
                                                 <div className="flex flex-col justify-between gap-4 lg:w-5/12">
                                                     <div className="space-y-4">
                                                         <div className="flex items-center justify-between">
-                                                            <a className="flex items-center gap-2" href="https://rscripts.net/@0x256">
+                                                            <a className="flex items-center gap-2">
 								    <PostCardMeta
                                                         		className="text-sm"
                                                         		meta={{ date, author }}
@@ -136,7 +137,13 @@ const SingleType1: FC<SingleType1Props> = ({ post, showRightSidebar }) => {
                                                         		avatarSize="h-10 w-10 text-sm"
                                                     		    />
                                                             </a>
-							    <a className="flex items-center gap-2" href="https://rscripts.net/@0x256">
+							    <a className="flex items-center gap-2">
+								    <PostActionDropdown
+									containerClassName="h-9 w-9 bg-neutral-50 hover:bg-neutral-100 dark:bg-neutral-800 dark:hover:bg-neutral-700"
+									iconClass="h-5 w-5"
+									post={post}
+									isSingle
+								    />
 								    <SocialsShareDropdown />
                                                             </a>
                                                         </div>
