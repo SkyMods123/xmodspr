@@ -241,7 +241,7 @@ const PostCardLikeAction2: FC<PostCardLikeActionProps> = ({
 				className={`${sizeClassName} flex flex-shrink-0 items-center justify-center rounded-full transition-colors duration-75 ${
 					isLiked
 						? ''
-						: 'bg-neutral-50 group-hover/PostCardLikeAction:bg-rose-50 dark:bg-neutral-800 dark:group-hover/PostCardLikeAction:bg-rose-100/10'
+						: ''
 				}`}
 			>
 				<FavouriteIcon
