@@ -14,7 +14,6 @@ import { GET_RELATED_POSTS } from '@/container/singles/single/related';
 import PostCardLikeAndComment from '@/components/PostCardLikeAndComment/PostCardLikeAndComment'
 import NcBookmark from '@/components/NcBookmark/NcBookmark'
 import PostCardLikeAction2 from '@/components/PostCardLikeAction/PostCardLikeAction2'
-import Tag from '@/components/Tag/Tag'
 
 export interface SingleType1Props {
     post: FragmentTypePostFullFields;
