@@ -68,7 +68,7 @@ const SingleType1: FC<SingleType1Props> = ({ post, showRightSidebar }) => {
 						    <CategoryBadgeList
 								itemClass="!px-3"
 								categories={categories?.nodes || []}
-							    	className="-bottom-[3px]"
+							    	className="h-6"
 							/>
                                                 <div className="flex items-center justify-between gap-3">
                                                     <div className="flex min-w-0 items-center gap-3">
@@ -80,12 +80,6 @@ const SingleType1: FC<SingleType1Props> = ({ post, showRightSidebar }) => {
                                                     </div>
                                                 </div>
                                                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                                                    <PostCardMeta
-                                                        className="text-sm"
-                                                        meta={{ date, author }}
-                                                        hiddenAvatar={false}
-                                                        avatarSize="h-7 w-7 text-sm"
-                                                    />
                                                     <a
                                                         aria-label="Search for game"
                                                         className="hover:text-green-500 hover:underline"
@@ -133,6 +127,12 @@ const SingleType1: FC<SingleType1Props> = ({ post, showRightSidebar }) => {
                                                     <div className="space-y-4">
                                                         <div className="flex items-center justify-between">
                                                             <a className="flex items-center gap-2" href="https://rscripts.net/@0x256">
+								    <PostCardMeta
+                                                        		className="text-sm"
+                                                        		meta={{ date, author }}
+                                                       	 		hiddenAvatar={false}
+                                                        		avatarSize="h-12 w-12 text-sm"
+                                                    		    />
                                                                 <span className="flex cursor-pointer items-center gap-1 text-base font-medium text-foreground hover:text-primary">
                                                                     viewCount
                                                                 </span>
