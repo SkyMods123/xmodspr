@@ -56,7 +56,6 @@ const SingleType1: FC<SingleType1Props> = ({ post, showRightSidebar }) => {
                 <title>{title}</title>
             </Head>
             <div className="bg-background __className_3a0388 min-h-screen">
-                </div>
                 <div className="absolute -top-[370px] hidden h-[50rem] w-full md:block"></div>
                 <div className="min-h-screen bg-background">
                     <main className="container px-4 py-6 lg:px-14">
@@ -72,16 +71,6 @@ const SingleType1: FC<SingleType1Props> = ({ post, showRightSidebar }) => {
 							/>
                                                 <div className="flex items-center justify-between gap-3">
                                                     <div className="flex min-w-0 items-center gap-3">
-                                                        <img
-                                                            alt="Game icon"
-                                                            loading="lazy"
-                                                            width="32"
-                                                            height="32"
-                                                            decoding="async"
-                                                            data-nimg="1"
-                                                            className="flex-shrink-0 rounded-lg"
-                                                            style={{ color: 'transparent' }}
-                                                        />
                                                         <div className="min-w-0">
                                                             <div className="text-2xl font-semibold leading-none tracking-tight">
                                                                 <h2 className="text-neutral-900 truncate text-xl font-bold sm:text-2xl dark:text-neutral-100">{title}</h2>
