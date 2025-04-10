@@ -56,17 +56,6 @@ const SingleType1: FC<SingleType1Props> = ({ post, showRightSidebar }) => {
                 <title>{title}</title>
             </Head>
             <div className="bg-background __className_3a0388 min-h-screen">
-                <div className="coverimg absolute -top-[380px] hidden h-[50rem] w-full opacity-30 blur-[2px] md:block">
-                    <img
-                        fetchPriority="high"
-                        loading="eager"
-                        width="135"
-                        height="160"
-                        decoding="async"
-                        data-nimg="1"
-                        className="h-[800px] w-full object-cover object-top"
-                        style={{ color: 'transparent' }}
-                    />
                 </div>
                 <div className="absolute -top-[370px] hidden h-[50rem] w-full md:block"></div>
                 <div className="min-h-screen bg-background">
