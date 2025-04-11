@@ -97,7 +97,7 @@ const SingleType1: FC<SingleType1Props> = ({ post, showRightSidebar }) => {
                                                     </a>
                                                     <span>•</span>
 						    <div
-							className={`flex flex-shrink-0 items-center justify-center rounded-full bg-neutral-50 transition-colors duration-75 group-hover/PostCardViewCount:bg-indigo-50 dark:bg-neutral-800 dark:group-hover/PostCardViewCount:bg-indigo-100/10 ${sizeClassName}`}
+							className={`flex flex-shrink-0 items-center justify-center rounded-full bg-neutral-50 transition-colors duration-75 group-hover/PostCardViewCount:bg-indigo-50 dark:bg-neutral-800 dark:group-hover/PostCardViewCount:bg-indigo-100/10 w-9 h-9`}
 						    >
 							<ViewIcon className="h-5 w-5" />
 						    </div>
