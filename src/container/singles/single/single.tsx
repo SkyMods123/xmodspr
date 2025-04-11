@@ -105,6 +105,9 @@ const SingleType1: FC<SingleType1Props> = ({ post, showRightSidebar }) => {
 						    <span className="ms-2 min-w-[1.125rem] flex-shrink-0 text-start text-neutral-900 transition-colors duration-75 dark:text-neutral-200">
 							{ncPostMetaData?.viewsCount}
 						    </span>
+							<span className="mx-[6px] font-medium text-neutral-500 dark:text-neutral-400">
+								·
+							</span>
                                                     <div className="flex items-center gap-1">
                                                         <svg
                                                             xmlns="http://www.w3.org/2000/svg"
@@ -121,9 +124,11 @@ const SingleType1: FC<SingleType1Props> = ({ post, showRightSidebar }) => {
                                                             <circle cx="12" cy="12" r="10"></circle>
                                                             <polyline points="12 6 12 12 16 14"></polyline>
                                                         </svg>
-                                                        <h2 className="ms-2 min-w-[1.125rem] flex-shrink-0 text-start text-neutral-900 transition-colors duration-75 dark:text-neutral-200">{ncPostMetaData?.viewsCount || 1}</h2>
+                                                        <h2 className="min-w-[1.125rem] flex-shrink-0 text-start text-neutral-900 transition-colors duration-75 dark:text-neutral-200">{ncPostMetaData?.viewsCount || 1}</h2>
                                                     </div>
-						        <span>•</span>
+						        <span className="mx-[6px] font-medium text-neutral-500 dark:text-neutral-400">
+								·
+							</span>
                                                 </div>
                                             </div>
                                         </div>
