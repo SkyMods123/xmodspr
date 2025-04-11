@@ -18,6 +18,7 @@ import CategoryBadgeList from '@/components/CategoryBadgeList/CategoryBadgeList'
 import SocialsShareDropdown from '@/components/SocialsShareDropdown/SocialsShareDropdown'
 import PostActionDropdown from '@/components/PostActionDropdown/PostActionDropdown'
 import SingleCommentWrap from '@/container/singles/SingleCommentWrap'
+import { NC_SITE_SETTINGS } from '@/contains/site-settings'
 
 
 export interface SingleType1Props {
@@ -39,6 +40,8 @@ const SingleType1: FC<SingleType1Props> = ({ post, showRightSidebar }) => {
 	categories,
 	commentCount,
         commentStatus,
+	commentCount,
+	uri,
     } = getPostDataFromPostFragment(post || {});
 
     // Fetch related posts
@@ -93,6 +96,17 @@ const SingleType1: FC<SingleType1Props> = ({ post, showRightSidebar }) => {
                                                     >
                                                     </a>
                                                     <span>•</span>
+						    <PostCardLikeAndComment 
+							hiddenCommentOnMobile={false}
+							useOnSinglePage
+							commentCount={commentCount || 0}
+							likeCount={ncPostMetaData?.likesCount || 0}
+							postDatabseId={databaseId}
+							linkToPost={uri}
+							showViewCount={NC_SITE_SETTINGS['single_page']?.show_view_cout}
+							showCommentCount={NC_SITE_SETTINGS['single_page']?.show_comment_count}
+							viewCount={ncPostMetaData?.viewsCount || 1}
+						    />
                                                     <div className="flex items-center gap-1">
                                                         <svg
                                                             xmlns="http://www.w3.org/2000/svg"
