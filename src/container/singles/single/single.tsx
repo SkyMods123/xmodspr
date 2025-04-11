@@ -87,11 +87,9 @@ const SingleType1: FC<SingleType1Props> = ({ post, showRightSidebar }) => {
                                                     </div>
                                                 </div>
                                                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
-						    <div
 							<span className="mx-[6px] font-medium text-neutral-500 dark:text-neutral-400">
 								·
 							</span>
-						    </div>
                                                     <div className="flex items-center gap-1">
 							<svg
                                                                     xmlns="http://www.w3.org/2000/svg"
