@@ -103,7 +103,7 @@ const SingleType1: FC<SingleType1Props> = ({ post, showRightSidebar }) => {
 						    </div>
 
 						    <span className="ms-2 min-w-[1.125rem] flex-shrink-0 text-start text-neutral-900 transition-colors duration-75 dark:text-neutral-200">
-							{viewCount}
+							{ncPostMetaData?.viewsCount}
 						    </span>
                                                     <div className="flex items-center gap-1">
                                                         <svg
