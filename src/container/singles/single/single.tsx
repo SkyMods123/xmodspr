@@ -19,6 +19,8 @@ import SocialsShareDropdown from '@/components/SocialsShareDropdown/SocialsShare
 import PostActionDropdown from '@/components/PostActionDropdown/PostActionDropdown'
 import SingleCommentWrap from '@/container/singles/SingleCommentWrap'
 import { NC_SITE_SETTINGS } from '@/contains/site-settings'
+import { EyeIcon, ViewIcon } from '../Icons/Icons'
+
 
 export interface SingleType1Props {
     post: FragmentTypePostFullFields;
@@ -94,6 +96,15 @@ const SingleType1: FC<SingleType1Props> = ({ post, showRightSidebar }) => {
                                                     >
                                                     </a>
                                                     <span>•</span>
+						    <div
+							className={`flex flex-shrink-0 items-center justify-center rounded-full bg-neutral-50 transition-colors duration-75 group-hover/PostCardViewCount:bg-indigo-50 dark:bg-neutral-800 dark:group-hover/PostCardViewCount:bg-indigo-100/10 ${sizeClassName}`}
+						    >
+							<ViewIcon className="h-5 w-5" />
+						    </div>
+
+						    <span className="ms-2 min-w-[1.125rem] flex-shrink-0 text-start text-neutral-900 transition-colors duration-75 dark:text-neutral-200">
+							{viewCount}
+						    </span>
                                                     <div className="flex items-center gap-1">
                                                         <svg
                                                             xmlns="http://www.w3.org/2000/svg"
