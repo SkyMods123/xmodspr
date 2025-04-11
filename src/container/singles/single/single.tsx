@@ -40,7 +40,6 @@ const SingleType1: FC<SingleType1Props> = ({ post, showRightSidebar }) => {
 	categories,
 	commentCount,
         commentStatus,
-	commentCount,
 	uri,
     } = getPostDataFromPostFragment(post || {});
 
