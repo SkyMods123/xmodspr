@@ -19,7 +19,7 @@ import SocialsShareDropdown from '@/components/SocialsShareDropdown/SocialsShare
 import PostActionDropdown from '@/components/PostActionDropdown/PostActionDropdown'
 import SingleCommentWrap from '@/container/singles/SingleCommentWrap'
 import { NC_SITE_SETTINGS } from '@/contains/site-settings'
-import { EyeIcon, ViewIcon } from '../Icons/Icons'
+import { EyeIcon, ViewIcon } from '@/components/Icons/Icons'
 
 
 export interface SingleType1Props {
