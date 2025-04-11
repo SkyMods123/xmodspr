@@ -57,8 +57,6 @@ const SingleType1: FC<SingleType1Props> = ({ post, showRightSidebar }) => {
 
     const hasFeaturedImage = !!featuredImage?.sourceUrl;
 
-    const { date } = meta 
-
     return (
         <>
             <Head>
