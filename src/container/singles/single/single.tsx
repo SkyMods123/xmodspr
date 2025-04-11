@@ -19,7 +19,7 @@ import SocialsShareDropdown from '@/components/SocialsShareDropdown/SocialsShare
 import PostActionDropdown from '@/components/PostActionDropdown/PostActionDropdown'
 import SingleCommentWrap from '@/container/singles/SingleCommentWrap'
 import { NC_SITE_SETTINGS } from '@/contains/site-settings'
-import PostCardViewCount from '../PostCardCommentBtn/PostCardViewCount'
+import PostCardViewCount from '@/components/PostCardCommentBtn/PostCardViewCount'
 
 export interface SingleType1Props {
     post: FragmentTypePostFullFields;
