@@ -70,7 +70,7 @@ const SingleType1: FC<SingleType1Props> = ({ post, showRightSidebar }) => {
                             <div className="z-10 space-y-6 lg:col-span-2">
                                 <header className="!mt-0">
                                     <div className="rounded-lg border text-card-foreground shadow-sm bg-card/70 backdrop-blur-sm">
-                                        <div className="flex flex-col space-y-1.5 p-6 pb-4">
+                                        <div className="flex flex-col space-y-1.5 p-6 pb-4 pt-[20px]">
                                             <div className="flex flex-col gap-1">
 						    <CategoryBadgeList
 								itemClass="!px-3"
