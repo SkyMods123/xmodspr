@@ -25,6 +25,7 @@ export interface SingleType1Props {
     post: FragmentTypePostFullFields;
     showRightSidebar?: boolean;
     showViewCount?: boolean
+    hiddenCommentOnMobile?: boolean
 }
 
 const SingleType1: FC<SingleType1Props> = ({ post, showRightSidebar }) => {
@@ -42,7 +43,7 @@ const SingleType1: FC<SingleType1Props> = ({ post, showRightSidebar }) => {
 	commentCount,
         commentStatus,
 	uri,
-	showViewCount = NC_SITE_SETTINGS['post_card']?.show_view_cout,
+	viewCount = 0,
     } = getPostDataFromPostFragment(post || {});
 
     // Fetch related posts
@@ -50,6 +51,8 @@ const SingleType1: FC<SingleType1Props> = ({ post, showRightSidebar }) => {
       variables: { databaseId: Number(databaseId) },
       skip: !databaseId
     });
+
+    const showViewCount = NC_SITE_SETTINGS['post_card']?.show_view_cout
 
     const relatedPosts = (relatedPostsData?.posts?.nodes || []).slice(0, 4);
 
