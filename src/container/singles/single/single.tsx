@@ -18,6 +18,7 @@ import CategoryBadgeList from '@/components/CategoryBadgeList/CategoryBadgeList'
 import SocialsShareDropdown from '@/components/SocialsShareDropdown/SocialsShareDropdown'
 import PostActionDropdown from '@/components/PostActionDropdown/PostActionDropdown'
 import SingleCommentWrap from '@/container/singles/SingleCommentWrap'
+import { NC_SITE_SETTINGS } from '@/contains/site-settings'
 
 
 export interface SingleType1Props {
@@ -109,7 +110,7 @@ const SingleType1: FC<SingleType1Props> = ({ post, showRightSidebar }) => {
                                                             <circle cx="12" cy="12" r="10"></circle>
                                                             <polyline points="12 6 12 12 16 14"></polyline>
                                                         </svg>
-                                                        2 days ago
+                                                        <h2 className="text-neutral-900 truncate text-xl font-bold sm:text-2xl dark:text-neutral-100">{NC_SITE_SETTINGS['single_page']?.show_view_cout}</h2>
                                                     </div>
                                                 </div>
                                             </div>
