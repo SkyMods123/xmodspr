@@ -135,7 +135,7 @@ const SingleType1: FC<SingleType1Props> = ({ post, showRightSidebar }) => {
                                                             <a className="flex items-center gap-2">
 								    <PostCardMeta
                                                         		className="text-sm"
-                                                        		meta={{ date, author }}
+                                                        		meta={{ author }}
                                                        	 		hiddenAvatar={false}
                                                         		avatarSize="h-10 w-10 text-sm"
                                                     		    />
