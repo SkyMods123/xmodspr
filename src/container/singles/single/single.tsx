@@ -98,11 +98,10 @@ const SingleType1: FC<SingleType1Props> = ({ post, showRightSidebar }) => {
                                                                     strokeWidth="2"
                                                                     strokeLinecap="round"
                                                                     strokeLinejoin="round"
-                                                                    className="lucide lucide-download h-4 w-4"
+                                                                    className=" h-4 w-4"
                                                                 >
                                                                     <path d="M0 0h24v24H0V0z"></path>
 							    	    <path d="M19 3h-1V2c0-.55-.45-1-1-1s-1 .45-1 1v1H8V2c0-.55-.45-1-1-1s-1 .45-1 1v1H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 16H6c-.55 0-1-.45-1-1V8h14v10c0 .55-.45 1-1 1zM8 10h3c.55 0 1 .45 1 1v3c0 .55-.45 1-1 1H8c-.55 0-1-.45-1-1v-3c0-.55.45-1 1-1z"></path>
-								    <polyline points="7 10 12 15 17 10"></polyline>
 							</svg>
 							<span className="mx-[6px] font-medium text-neutral-500 dark:text-neutral-400">
 								·
@@ -117,11 +116,10 @@ const SingleType1: FC<SingleType1Props> = ({ post, showRightSidebar }) => {
                                                                     strokeWidth="2"
                                                                     strokeLinecap="round"
                                                                     strokeLinejoin="round"
-                                                                    className="lucide lucide-download h-4 w-4"
+                                                                    className=" h-4 w-4"
                                                                 >
                                                                     <path d="M21.544 11.045C21.848 11.4713 22 11.6845 22 12C22 12.3155 21.848 12.5287 21.544 12.955C20.1779 14.8706 16.6892 19 12 19C7.31078 19 3.8221 14.8706 2.45604 12.955C2.15201 12.5287 2 12.3155 2 12C2 11.6845 2.15201 11.4713 2.45604 11.045C3.8221 9.12944 7.31078 5 12 5C16.6892 5 20.1779 9.12944 21.544 11.045Z"></path>
 							    	    <path d="M15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15C13.6569 15 15 13.6569 15 12Z"></path>
-								    <polyline points="7 10 12 15 17 10"></polyline>
 							</svg>
                                                         <h2 className="min-w-[1.125rem] flex-shrink-0 text-start text-neutral-900 transition-colors duration-75 dark:text-neutral-200">{ncPostMetaData?.viewsCount || 1}</h2>
                                                     </div>
