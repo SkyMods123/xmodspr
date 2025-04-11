@@ -19,13 +19,10 @@ import SocialsShareDropdown from '@/components/SocialsShareDropdown/SocialsShare
 import PostActionDropdown from '@/components/PostActionDropdown/PostActionDropdown'
 import SingleCommentWrap from '@/container/singles/SingleCommentWrap'
 import { NC_SITE_SETTINGS } from '@/contains/site-settings'
-import PostCardViewCount from '@/components/PostCardCommentBtn/PostCardViewCount'
 
 export interface SingleType1Props {
     post: FragmentTypePostFullFields;
     showRightSidebar?: boolean;
-    showViewCount?: boolean
-    hiddenCommentOnMobile?: boolean
 }
 
 const SingleType1: FC<SingleType1Props> = ({ post, showRightSidebar }) => {
@@ -43,7 +40,6 @@ const SingleType1: FC<SingleType1Props> = ({ post, showRightSidebar }) => {
 	commentCount,
         commentStatus,
 	uri,
-	viewCount = 0,
     } = getPostDataFromPostFragment(post || {});
 
     // Fetch related posts
@@ -51,8 +47,6 @@ const SingleType1: FC<SingleType1Props> = ({ post, showRightSidebar }) => {
       variables: { databaseId: Number(databaseId) },
       skip: !databaseId
     });
-
-    const showViewCount = NC_SITE_SETTINGS['post_card']?.show_view_cout
 
     const relatedPosts = (relatedPostsData?.posts?.nodes || []).slice(0, 4);
 
@@ -100,14 +94,6 @@ const SingleType1: FC<SingleType1Props> = ({ post, showRightSidebar }) => {
                                                     >
                                                     </a>
                                                     <span>•</span>
-							{showViewCount && (
-								<PostCardViewCount
-									className={`${
-										hiddenCommentOnMobile ? 'hidden sm:flex' : 'flex'
-									} ${itemClass}`}
-									viewCount={viewCount || 1}
-								/>
-							)}
                                                     <div className="flex items-center gap-1">
                                                         <svg
                                                             xmlns="http://www.w3.org/2000/svg"
@@ -124,8 +110,9 @@ const SingleType1: FC<SingleType1Props> = ({ post, showRightSidebar }) => {
                                                             <circle cx="12" cy="12" r="10"></circle>
                                                             <polyline points="12 6 12 12 16 14"></polyline>
                                                         </svg>
-                                                        <h2 className="text-neutral-900 truncate text-xl font-bold sm:text-2xl dark:text-neutral-100">{ncPostMetaData?.viewsCount || 1}</h2>
+                                                        <h2 className="ms-2 min-w-[1.125rem] flex-shrink-0 text-start text-neutral-900 transition-colors duration-75 dark:text-neutral-200">{ncPostMetaData?.viewsCount || 1}</h2>
                                                     </div>
+						        <span>•</span>
                                                 </div>
                                             </div>
                                         </div>
