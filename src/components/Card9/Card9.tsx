@@ -17,7 +17,7 @@ export interface Card9Props extends CommonPostCardProps {
 
 const Card9: FC<Card9Props> = ({
 	className = '',
-	ratio = 'aspect-w-3 aspect-h-3 sm:aspect-h-4',
+	ratio = '',
 	post,
 	hoverClass = '',
 }) => {
