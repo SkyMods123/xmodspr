@@ -20,17 +20,12 @@ import PostActionDropdown from '@/components/PostActionDropdown/PostActionDropdo
 import SingleCommentWrap from '@/container/singles/SingleCommentWrap'
 import ncFormatDate from '@/utils/formatDate'
 import convertNumbThousand from '@/utils/convertNumbThousand'
-import { WordPressTemplate } from "@faustwp/core";
-import { WordPressTemplateProps } from "../types";
 
 export interface SingleType1Props {
     post: FragmentTypePostFullFields;
     showRightSidebar?: boolean;
 }
 
-export default function Preview(props: WordPressTemplateProps) {
-  return <WordPressTemplate {...props} />;
-}
 
 const SingleType1: FC<SingleType1Props> = ({ post, showRightSidebar }) => {
     const {
