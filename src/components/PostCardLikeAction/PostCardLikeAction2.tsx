@@ -26,7 +26,7 @@ export interface PostCardLikeActionProps {
 
 const PostCardLikeAction2: FC<PostCardLikeActionProps> = ({
 	className = '',
-	sizeClassName = 'h-9 w-9 ',
+	sizeClassName = '',
 	likeCount: likeCountProp = 34,
 	postDatabseId,
 }) => {
@@ -247,7 +247,7 @@ const PostCardLikeAction2: FC<PostCardLikeActionProps> = ({
 				<FavouriteIcon
 					color={'currentColor'}
 					fill={isLiked ? 'currentColor' : 'none'}
-					className="h-[18px] w-[18px] ml-[12px]"
+					className="h-[18px] w-[18px]"
 				/>
 			</div>
 
