@@ -23,7 +23,6 @@ import convertNumbThousand from '@/utils/convertNumbThousand'
 
 
 export interface SingleType1Props {
-    post: FragmentTypePostFullFields;
     showRightSidebar?: boolean;
 }
 
