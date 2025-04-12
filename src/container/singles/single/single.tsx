@@ -23,7 +23,8 @@ import convertNumbThousand from '@/utils/convertNumbThousand'
 
 
 export interface SingleType1Props {
-    showRightSidebar?: boolean;
+	post: FragmentTypePostFullFields;
+    	showRightSidebar?: boolean;
 }
 
 const SingleType1: FC<SingleType1Props> = ({ post, showRightSidebar }) => {
