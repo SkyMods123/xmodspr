@@ -4,6 +4,7 @@ import NcImage from "@/components/NcImage/NcImage";
 import { getPostDataFromPostFragment } from "@/utils/getPostDataFromPostFragment";
 import SingleHeader from "../SingleHeader";
 import { SingleType1Props } from "../single/single";
+import { GET_RELATED_POSTS } from '@/container/singles/single/related';
 interface Props extends SingleType1Props {}
 
 const SingleType2: FC<Props> = ({ post }) => {
@@ -19,6 +20,18 @@ const SingleType2: FC<Props> = ({ post }) => {
     ncPostMetaData,
   } = getPostDataFromPostFragment(post || {});
   //
+  // Fetch related posts
+    const { data: relatedPostsData, loading, error } = useQuery(GET_RELATED_POSTS, {
+      variables: { databaseId: Number(databaseId) },
+      skip: !databaseId
+    });
+
+    const relatedPosts = (relatedPostsData?.posts?.nodes || []).slice(0, 4);
+
+    // Hook za meta podatke
+    const { loading: loadingRelatedMeta } = useGetPostsNcmazMetaByIds({
+        posts: relatedPosts as TPostCard[]
+    });
 
   const imgWidth = featuredImage?.mediaDetails?.width || 1000;
   const imgHeight = featuredImage?.mediaDetails?.height || 750;
@@ -36,6 +49,10 @@ const SingleType2: FC<Props> = ({ post }) => {
 
       {/* FEATURED IMAGE */}
       {featuredImage?.sourceUrl && (
+        <SingleRelatedPosts2
+          posts={relatedPosts}
+          postDatabaseId={databaseId}
+        />
         <NcImage
           alt={title}
           containerClassName="container my-10 sm:my-12"
