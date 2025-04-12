@@ -247,12 +247,12 @@ const PostCardLikeAction2: FC<PostCardLikeActionProps> = ({
 				<FavouriteIcon
 					color={'currentColor'}
 					fill={isLiked ? 'currentColor' : 'none'}
-					className="h-[18px] w-[18px]"
+					className="h-[18px] w-[18px] ml-[12px]"
 				/>
 			</div>
 
 			<span
-				className={`ms-2 min-w-[1.125rem] flex-shrink-0 text-start transition-colors duration-75 ${
+				className={`ms-2 min-w-[1.125rem] flex-shrink-0 text-start transition-colors duration-75 ml-[0px] ${
 					isLiked
 						? 'text-rose-600 dark:text-rose-500'
 						: 'text-neutral-900 dark:text-neutral-200'
