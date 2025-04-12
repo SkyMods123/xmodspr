@@ -125,7 +125,7 @@ const SingleCommentForm: FC<SingleCommentFormProps> = ({
 						email,
 					})
 			}}
-			className={`nc-SingleCommentForm ${className}`}
+			className={`nc-SingleCommentForm mt-[0px] ${className}`}
 		>
 			<Textarea
 				placeholder={T.pageSingle['Add to discussion']}
