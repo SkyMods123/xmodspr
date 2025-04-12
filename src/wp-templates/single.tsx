@@ -46,10 +46,6 @@ const DynamicSingleType5 = dynamic(
 	() => import('../container/singles/single-5/single-5'),
 )
 
-// Eksportovana funkcija za dobijanje related posts
-export const getRelatedPosts = (data: GetPostSiglePageQuery) => {
-  return (data?.posts?.nodes || []);
-}
 
 const Component: FaustTemplate<GetPostSiglePageQuery> = (props) => {
 	//  LOADING ----------
