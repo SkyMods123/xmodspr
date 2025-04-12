@@ -176,7 +176,7 @@ const NcBookmark3: FC<NcBookmarkProps> = ({
 				/>
 				{isBookmarked ? 'Saved' : 'Save'}
 			</span>
-			<span className={`absolute inset-0 rounded-full ${
+			<span className={`absolute inset-0 rounded-full text-neutral-900 ${
 					isBookmarked ? 'bg-neutral-100 dark:bg-neutral-800' : ''
 				}`}>
 			</span>
