@@ -8,6 +8,7 @@ import { GET_RELATED_POSTS } from '@/container/singles/single/related';
 interface Props extends SingleType1Props {}
 import SingleRelatedPosts2 from '@/container/singles/SingleRelatedPosts2';
 import { gql, useQuery } from '@apollo/client';
+import useGetPostsNcmazMetaByIds from "@/hooks/useGetPostsNcmazMetaByIds";
 
 const SingleType2: FC<Props> = ({ post }) => {
   //
