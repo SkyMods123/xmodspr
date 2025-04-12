@@ -599,12 +599,12 @@ const SingleCommentWrap: FC<SingleCommentWrapProps> = ({
 		>
 			<div>
 				{/* COMMENT FORM */}
-				<div className="mx-auto max-w-screen-md pt-5">
+				<div className="mx-auto ml-[0px] mr-[0px] ">
 					<h3
 						id="nc-single-comment"
 						className="text-lg font-semibold text-neutral-800 xl:text-xl dark:text-neutral-200"
 					>
-						{T.pageSingle.Responses} ({commentCount} )
+
 					</h3>
 					<SingleCommentForm
 						isSuccessfulCreatedComment={
