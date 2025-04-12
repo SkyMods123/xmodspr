@@ -47,12 +47,13 @@ const SingleType2: FC<Props> = ({ post }) => {
         </div>
       </header>
 
-      {/* FEATURED IMAGE */}
-      {featuredImage?.sourceUrl && (
-        <SingleRelatedPosts2
+      <SingleRelatedPosts2
           posts={relatedPosts}
           postDatabaseId={databaseId}
-        />
+      />
+
+      {/* FEATURED IMAGE */}
+      {featuredImage?.sourceUrl && (
         <NcImage
           alt={title}
           containerClassName="container my-10 sm:my-12"
