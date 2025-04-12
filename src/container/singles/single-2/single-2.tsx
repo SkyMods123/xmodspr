@@ -9,6 +9,8 @@ interface Props extends SingleType1Props {}
 import SingleRelatedPosts2 from '@/container/singles/SingleRelatedPosts2';
 import { gql, useQuery } from '@apollo/client';
 import useGetPostsNcmazMetaByIds from "@/hooks/useGetPostsNcmazMetaByIds";
+import { TPostCard } from '@/components/Card2/Card2';
+
 
 const SingleType2: FC<Props> = ({ post }) => {
   //
