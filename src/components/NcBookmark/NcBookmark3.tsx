@@ -169,11 +169,13 @@ const NcBookmark3: FC<NcBookmarkProps> = ({
 			title={isBookmarked ? 'Remove from saved list' : 'Save to reading list'}
 			onClick={handleClickSaveAction}
 		>
-			<MyBookmarkIcon
-				fill={isBookmarked ? 'currentColor' : 'none'}
-				className="z-[1] h-[18px] w-[18px]"
-			/>
-
+			<span className="flex items-center gap-2">
+				<MyBookmarkIcon
+					fill={isBookmarked ? 'currentColor' : 'none'}
+					className="z-[1] h-[18px] w-[18px]"
+				/>
+				Save
+			</span>
 			<span
 				className={`absolute inset-0 rounded-full ${
 					isBookmarked ? 'bg-neutral-100 dark:bg-neutral-800' : ''
