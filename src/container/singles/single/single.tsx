@@ -122,7 +122,7 @@ const SingleType1: FC<SingleType1Props> = ({ post, showRightSidebar }) => {
                                                                     <path d="M21.544 11.045C21.848 11.4713 22 11.6845 22 12C22 12.3155 21.848 12.5287 21.544 12.955C20.1779 14.8706 16.6892 19 12 19C7.31078 19 3.8221 14.8706 2.45604 12.955C2.15201 12.5287 2 12.3155 2 12C2 11.6845 2.15201 11.4713 2.45604 11.045C3.8221 9.12944 7.31078 5 12 5C16.6892 5 20.1779 9.12944 21.544 11.045Z"></path>
 							    	    <path d="M15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15C13.6569 15 15 13.6569 15 12Z"></path>
 							</svg>
-                                                        <h2 className="min-w-[1.125rem] flex-shrink-0 text-start text-neutral-900 transition-colors duration-75 dark:text-neutral-200">{ncPostMetaData?.viewsCount || 1}</h2>
+                                                        <h2 className="min-w-[1.125rem] flex-shrink-0 text-start text-neutral-900 transition-colors duration-75 dark:text-neutral-200">{convertNumbThousand(ncPostMetaData?.viewsCount || 1)}</h2>
                                                     </div>
 						        <span className="mx-[6px] font-medium text-neutral-500 dark:text-neutral-400">
 								·
@@ -173,7 +173,7 @@ const SingleType1: FC<SingleType1Props> = ({ post, showRightSidebar }) => {
 								containerClassName="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 text-primary-foreground h-10 px-4 bg-neutral-50 hover:bg-neutral-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-200 border border-input"
 							/>
 							    <PostCardLikeAction2
-								likeCount={convertNumbThousand(ncPostMetaData?.likesCount || 0)}
+								likeCount={ncPostMetaData?.likesCount || 0}
 								postDatabseId={databaseId}
 								className="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 text-primary-foreground h-10 px-4 bg-neutral-50 hover:bg-neutral-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-200 border border-input rounded-full"
 							/>
