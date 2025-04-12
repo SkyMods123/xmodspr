@@ -42,6 +42,11 @@ const DynamicSingleType5 = dynamic(
 	() => import('../container/singles/single-5/single-5'),
 )
 
+// Eksportovana funkcija za dobijanje related posts
+export const getRelatedPosts = (data: GetPostSiglePageQuery) => {
+  return (data?.posts?.nodes || []);
+}
+
 const Component: FaustTemplate<GetPostSiglePageQuery> = (props) => {
 	//  LOADING ----------
 	if (props.loading) {
@@ -70,9 +75,7 @@ const Component: FaustTemplate<GetPostSiglePageQuery> = (props) => {
 
 	const _post = props.data?.post || {}
 
-	// console.log('🚀 ~ file: single.tsx ~ line 68 ~ Component ~ _post', _post)
-
-	const _relatedPosts = (props.data?.posts?.nodes as TPostCard[]) || []
+	const _relatedPosts = props.data ? getRelatedPosts(props.data) : [];
 	const _top10Categories =
 		(props.data?.categories?.nodes as TCategoryCardFull[]) || []
 
@@ -85,11 +88,9 @@ const Component: FaustTemplate<GetPostSiglePageQuery> = (props) => {
 		excerpt,
 	} = getPostDataFromPostFragment(_post)
 
-	//
 	const {} = useGetPostsNcmazMetaByIds({
 		posts: (IS_PREVIEW ? [] : [_post]) as TPostCard[],
 	})
-	//
 
 	// Query update post view count
 	const [handleUpdateReactionCount, { reset }] = useMutation(
@@ -192,36 +193,14 @@ const Component: FaustTemplate<GetPostSiglePageQuery> = (props) => {
 						<div className={`relative`}>
 							{renderHeaderType()}
 
-							<div className="container my-10 flex flex-col lg:flex-row">
-								<div className="w-full lg:w-3/5 xl:w-2/3 xl:pe-20">
-									<SingleContent post={_post} />
-								</div>
-								<div className="mt-12 w-full lg:mt-0 lg:w-2/5 lg:ps-10 xl:w-1/3 xl:ps-0">
-									<Sidebar categories={_top10Categories} />
-								</div>
-							</div>
 
-							{/* RELATED POSTS */}
-							<DynamicSingleRelatedPosts
-								posts={_relatedPosts}
-								postDatabaseId={databaseId}
-							/>
 						</div>
 					</div>
 				) : (
 					<div>
 						{renderHeaderType()}
 
-						<div className="container mt-10">
-							{/* SINGLE MAIN CONTENT */}
-							<SingleContent post={_post} />
-						</div>
 
-						{/* RELATED POSTS */}
-						<DynamicSingleRelatedPosts
-							posts={_relatedPosts}
-							postDatabaseId={databaseId}
-						/>
 					</div>
 				)}
 			</PageLayout>
