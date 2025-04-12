@@ -12,7 +12,7 @@ import { TPostCard } from '@/components/Card2/Card2';
 import SingleRelatedPosts2 from '@/container/singles/SingleRelatedPosts2';
 import { GET_RELATED_POSTS } from '@/container/singles/single/related';
 import PostCardLikeAndComment from '@/components/PostCardLikeAndComment/PostCardLikeAndComment'
-import NcBookmark from '@/components/NcBookmark/NcBookmark'
+import NcBookmark3 from '@/components/NcBookmark/NcBookmark3'
 import PostCardLikeAction2 from '@/components/PostCardLikeAction/PostCardLikeAction2'
 import CategoryBadgeList from '@/components/CategoryBadgeList/CategoryBadgeList'
 import SocialsShareDropdown from '@/components/SocialsShareDropdown/SocialsShareDropdown'
@@ -168,7 +168,7 @@ const SingleType1: FC<SingleType1Props> = ({ post, showRightSidebar }) => {
                                                         </div>
                                                     </div>
                                                     <div className="grid grid-cols-2 gap-3">
-							    <NcBookmark
+							    <NcBookmark3
 								postDatabseId={databaseId}
 								containerClassName="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 text-primary-foreground h-10 px-4 bg-neutral-50 hover:bg-neutral-100 dark:bg-neutral-800 dark:hover:bg-neutral-700 dark:text-neutral-200 border border-input"
 							/>
