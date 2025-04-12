@@ -252,7 +252,7 @@ const PostCardLikeAction2: FC<PostCardLikeActionProps> = ({
 			</div>
 
 			<span
-				className={`ms-2 ml-[0px] min-w-[1.125rem] flex-shrink-0 text-start transition-colors duration-75 ${
+				className={`ml-[0px] min-w-[1.125rem] flex-shrink-0 text-start transition-colors duration-75 ${
 					isLiked
 						? 'text-rose-600 dark:text-rose-500 ml-[0px]'
 						: 'text-neutral-900 dark:text-neutral-200 ml-[0px]'
