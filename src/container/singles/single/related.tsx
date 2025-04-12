@@ -13,28 +13,9 @@ import SingleRelatedPosts from '@/container/singles/SingleRelatedPosts';
 
 export const GET_RELATED_POSTS = gql`
   query GetRelatedPosts($databaseId: Int!) {
-    posts(where: { isRelatedOfPostId: $databaseId } ) {
+    posts(where: {isRelatedOfPostId:$post_databaseId}) {
       nodes {
-        databaseId
-        title
-        uri
-        date
-        excerpt
-        featuredImage {
-          node {
-            sourceUrl
-            altText
-          }
-        }
-        author {
-          node {
-            name
-            uri
-            avatar {
-              url
-            }
-          }
-        }
+      ...PostCardFieldsNOTNcmazMEDIA
       }
     }
   }
