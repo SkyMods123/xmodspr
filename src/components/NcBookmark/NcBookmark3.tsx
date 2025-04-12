@@ -20,7 +20,7 @@ export interface NcBookmarkProps {
 }
 
 const NcBookmark3: FC<NcBookmarkProps> = ({
-	containerClassName = 'h-9 w-9 bg-neutral-50 hover:bg-neutral-100 dark:bg-neutral-800 dark:hover:bg-neutral-700',
+	containerClassName = 'bg-neutral-50 hover:bg-neutral-100 dark:bg-neutral-800 dark:hover:bg-neutral-700',
 	postDatabseId,
 }) => {
 	const [handleUpdateReactionCount, { loading, error, data }] = useMutation(
@@ -165,7 +165,7 @@ const NcBookmark3: FC<NcBookmarkProps> = ({
 
 	return (
 		<button
-			className={`nc-NcBookmark relative flex items-center justify-center rounded-full ${containerClassName}`}
+			className={`nc-NcBookmark relative flex items-center justify-center ${containerClassName}`}
 			title={isBookmarked ? 'Remove from saved list' : 'Save to reading list'}
 			onClick={handleClickSaveAction}
 		>
@@ -175,7 +175,7 @@ const NcBookmark3: FC<NcBookmarkProps> = ({
 			/>
 
 			<span
-				className={`absolute inset-0 rounded-full ${
+				className={`absolute inset-0  ${
 					isBookmarked ? 'bg-neutral-100 dark:bg-neutral-800' : ''
 				}`}
 			></span>
