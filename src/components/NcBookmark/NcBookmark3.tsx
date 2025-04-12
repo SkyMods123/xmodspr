@@ -174,12 +174,11 @@ const NcBookmark3: FC<NcBookmarkProps> = ({
 					fill={isBookmarked ? 'currentColor' : 'none'}
 					className="z-[1] h-[18px] w-[18px]"
 				/>
-				Save
+				{isBookmarked ? 'Saved' : 'Save'}
 			</span>
 			<span className={`absolute inset-0 rounded-full ${
 					isBookmarked ? 'bg-neutral-100 dark:bg-neutral-800' : ''
 				}`}>
-				Saved
 			</span>
 		</button>
 	)
