@@ -26,9 +26,9 @@ import SingleTypeAudio from '@/container/singles/single-audio/single-audio'
 import SingleTypeVideo from '@/container/singles/single-video/single-video'
 import SingleTypeGallery from '@/container/singles/single-gallery/single-gallery'
 
-export const getRelatedPosts = (data: GetPostSiglePageQuery): TPostCard[] => {
-  return data?.posts?.nodes || [];
-};
+export const getRelatedPosts = (data: GetPostSiglePageQuery) => {
+  return (props.data?.posts?.nodes as TPostCard[]) || [];
+}
 
 const DynamicSingleRelatedPosts = dynamic(
 	() => import('@/container/singles/SingleRelatedPosts'),
