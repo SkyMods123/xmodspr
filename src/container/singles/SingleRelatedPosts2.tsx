@@ -21,7 +21,7 @@ const SingleRelatedPosts2: FC<SingleRelatedPostsProps> = ({
         <div key={post.databaseId || index} className="mb-4 last:mb-0">
           <Card9 
             post={post}
-            ratio="aspect-w-3 aspect-h-3"
+            ratio="aspect-w-16 aspect-h-9"
             className="lg:w-[350px] lg:h-[190px] sm:h-[100px] md:h-[190px]" // Za minimalnu i fiksnu visinu
           />
         </div>
