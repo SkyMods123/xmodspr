@@ -105,6 +105,7 @@ export const NC_COMMENT_FULL_FRAGMENT = gql(/* GraphQL */ `
 					databaseId
 					uri
 					url
+     					isVerified 
 					name
 					ncUserMeta {
 						featuredImage {
