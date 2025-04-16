@@ -71,11 +71,13 @@ const SingleType1: FC<SingleType1Props> = ({ post, showRightSidebar }) => {
 
     const hasFeaturedImage = !!featuredImage?.sourceUrl;
 
-    const UserList = () => {
-  	    const { data, loading, error } = useQuery(GET_USERS);
+    const { data, loading, error } = useQuery(GET_USERS);
 
     if (loading) return <p>Loading...</p>;
     if (error) return <p>Error: {error.message}</p>;
+
+    // Pronađi autora na osnovu `authorId` iz posta
+    const user = data?.users?.nodes.find((user) => user.id === post.authorId);
 
     return (
         <>
@@ -180,7 +182,18 @@ const SingleType1: FC<SingleType1Props> = ({ post, showRightSidebar }) => {
 									isSingle
 								    />
 								    <SocialsShareDropdown />
-								    {user.isVerified && <span style={{ color: 'green', marginLeft: '8px' }}>Verified</span>}
+								    {user?.isVerified && (
+                        						<span
+                          						    style={{
+										    u
+                            							    marginLeft: '8px',
+                            							    color: 'green',
+                            						            fontWeight: 'bold',
+                          							}}
+                        						       >
+                          							Verified
+                        						</span>
+                      						    )}
 							    </a>
                                                         </div>
                                                     </div>
