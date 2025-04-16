@@ -21,6 +21,18 @@ import SingleCommentWrap from '@/container/singles/SingleCommentWrap'
 import ncFormatDate from '@/utils/formatDate'
 import convertNumbThousand from '@/utils/convertNumbThousand'
 
+const GET_USERS = gql`
+  query GetUsers {
+    users {
+      nodes {
+        id
+        name
+        isVerified
+      }
+    }
+  }
+`;
+
 export interface SingleType1Props {
     post: FragmentTypePostFullFields;
     showRightSidebar?: boolean;
@@ -58,6 +70,12 @@ const SingleType1: FC<SingleType1Props> = ({ post, showRightSidebar }) => {
     });
 
     const hasFeaturedImage = !!featuredImage?.sourceUrl;
+
+    const UserList = () => {
+  	    const { data, loading, error } = useQuery(GET_USERS);
+
+    if (loading) return <p>Loading...</p>;
+    if (error) return <p>Error: {error.message}</p>;
 
     return (
         <>
@@ -152,6 +170,7 @@ const SingleType1: FC<SingleType1Props> = ({ post, showRightSidebar }) => {
                                                        	 		hiddenAvatar={false}
                                                         		avatarSize="h-10 w-10 text-sm"
                                                     		    />
+								    
                                                             </a>
 							    <a className="flex items-center gap-2">
 								    <PostActionDropdown
@@ -161,7 +180,8 @@ const SingleType1: FC<SingleType1Props> = ({ post, showRightSidebar }) => {
 									isSingle
 								    />
 								    <SocialsShareDropdown />
-                                                            </a>
+								    {user.isVerified && <span style={{ color: 'green', marginLeft: '8px' }}>Verified</span>}
+							    </a>
                                                         </div>
                                                     </div>
                                                     <div className="grid grid-cols-2 gap-3">
