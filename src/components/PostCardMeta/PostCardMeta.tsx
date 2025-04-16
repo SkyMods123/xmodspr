@@ -6,6 +6,20 @@ import ncFormatDate from '@/utils/formatDate'
 import { FragmentType } from '@/__generated__'
 import { NC_USER_FULL_FIELDS_FRAGMENT } from '@/fragments'
 import { getUserDataFromUserCardFragment } from '@/utils/getUserDataFromUserCardFragment'
+import { gql, useQuery } from '@apollo/client';
+import { VerifyIcon } from '@/components/VerifyIcon'
+
+const GET_USERS = gql`
+  query GetUsers {
+    users {
+      nodes {
+        id
+        name
+        isVerified
+      }
+    }
+  }
+`;
 
 export interface PostCardMetaProps {
 	className?: string
@@ -56,6 +70,7 @@ const PostCardMeta: FC<PostCardMetaProps> = ({
 					<span className="block font-medium capitalize text-neutral-700 hover:text-black dark:text-neutral-300 dark:hover:text-white">
 						{author?.name || ''}
 					</span>
+					{author?.isVerified && <VerifyIcon />}
 				</Link>
 			)}
 			<>
