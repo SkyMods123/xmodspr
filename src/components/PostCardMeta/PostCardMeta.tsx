@@ -7,7 +7,7 @@ import { FragmentType } from '@/__generated__'
 import { NC_USER_FULL_FIELDS_FRAGMENT } from '@/fragments'
 import { getUserDataFromUserCardFragment } from '@/utils/getUserDataFromUserCardFragment'
 import { gql, useQuery } from '@apollo/client';
-import { VerifyIcon } from '@/components/VerifyIcon'
+import VerifyIcon from '@/components/VerifyIcon'
 
 const GET_USERS = gql`
   query GetUsers {
