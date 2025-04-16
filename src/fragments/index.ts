@@ -469,7 +469,6 @@ export const NC_USER_FULL_FIELDS_FRAGMENT = gql(/* GraphQL */ `
 		id
 		databaseId
 		uri
-  		isVerified
 		username
 		name
 		description
