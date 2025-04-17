@@ -11,18 +11,6 @@ import { gql, useQuery } from '@apollo/client';
 import useGetPostsNcmazMetaByIds from "@/hooks/useGetPostsNcmazMetaByIds";
 import { TPostCard } from '@/components/Card2/Card2';
 
-const GET_USERS = gql`
-  query GetUsers {
-    users {
-      nodes {
-        id
-        name
-        isVerified
-      }
-    }
-  }
-`;
-
 
 const SingleType2: FC<Props> = ({ post }) => {
   //
@@ -43,11 +31,6 @@ const SingleType2: FC<Props> = ({ post }) => {
       skip: !databaseId
     });
 
-    const CheckUsers = () => {
-      const { data, loading, error } = useQuery(GET_USERS);
-
-    if (loading) return <p>Loading...</p>;
-    if (error) return <p>Error: {error.message}</p>;
 
     const relatedPosts = (relatedPostsData?.posts?.nodes || []).slice(0, 4);
 
@@ -70,14 +53,6 @@ const SingleType2: FC<Props> = ({ post }) => {
         </div>
       </header>
 
-      <h1>Users List</h1>
-      <ul>
-        {data.users.nodes.map((user: { id: string; name: string; isVerified: boolean }) => (
-          <li key={user.id}>
-            {user.name} - Verified: {user.isVerified ? "Yes" : "No"}
-          </li>
-        ))}
-      </ul>
 
       <SingleRelatedPosts2
           posts={relatedPosts}
