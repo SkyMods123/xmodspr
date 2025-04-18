@@ -52,7 +52,7 @@ const SingleType2: FC<Props> = ({ post }) => {
   const imgHeight = featuredImage?.mediaDetails?.height || 750;
 
   // Provera da li je autor verifikovan
-  const isVerified = author?.node?.isVerified;
+  const isVerified = author?.isVerified;
 
   return (
     <div className={`pt-8 lg:pt-16`}>
