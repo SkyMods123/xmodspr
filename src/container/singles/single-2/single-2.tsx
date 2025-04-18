@@ -1,16 +1,26 @@
-// PICOLOVKA
 import React, { FC } from "react";
 import NcImage from "@/components/NcImage/NcImage";
 import { getPostDataFromPostFragment } from "@/utils/getPostDataFromPostFragment";
 import SingleHeader from "../SingleHeader";
 import { SingleType1Props } from "../single/single";
 import { GET_RELATED_POSTS } from '@/container/singles/single/related';
-interface Props extends SingleType1Props {}
-import SingleRelatedPosts2 from '@/container/singles/SingleRelatedPosts2';
 import { gql, useQuery } from '@apollo/client';
 import useGetPostsNcmazMetaByIds from "@/hooks/useGetPostsNcmazMetaByIds";
 import { TPostCard } from '@/components/Card2/Card2';
 
+export const GET_VERIFIED_USERS = gql`
+  query GetVerifiedUsers {
+    users {
+      nodes {
+        id
+        name
+        isVerified
+      }
+    }
+  }
+`;
+
+interface Props extends SingleType1Props {}
 
 const SingleType2: FC<Props> = ({ post }) => {
   //
@@ -24,23 +34,26 @@ const SingleType2: FC<Props> = ({ post }) => {
     featuredImage,
     ncPostMetaData,
   } = getPostDataFromPostFragment(post || {});
-  //
+  
   // Fetch related posts
-    const { data: relatedPostsData, loading, error } = useQuery(GET_RELATED_POSTS, {
-      variables: { databaseId: Number(databaseId) },
-      skip: !databaseId
-    });
+  const { data: relatedPostsData, loading, error } = useQuery(GET_RELATED_POSTS, {
+    variables: { databaseId: Number(databaseId) },
+    skip: !databaseId
+  });
 
+  const relatedPosts = (relatedPostsData?.posts?.nodes || []).slice(0, 4);
 
-    const relatedPosts = (relatedPostsData?.posts?.nodes || []).slice(0, 4);
-
-    // Hook za meta podatke
-    const { loading: loadingRelatedMeta } = useGetPostsNcmazMetaByIds({
-        posts: relatedPosts as TPostCard[]
-    });
+  // Hook za meta podatke
+  const { loading: loadingRelatedMeta } = useGetPostsNcmazMetaByIds({
+    posts: relatedPosts as TPostCard[]
+  });
 
   const imgWidth = featuredImage?.mediaDetails?.width || 1000;
   const imgHeight = featuredImage?.mediaDetails?.height || 750;
+
+  // Provera da li je autor verifikovan
+  const isVerified = author?.node?.isVerified;
+
   return (
     <div className={`pt-8 lg:pt-16`}>
       {/* SINGLE HEADER */}
@@ -48,15 +61,20 @@ const SingleType2: FC<Props> = ({ post }) => {
         <div className="max-w-screen-md mx-auto">
           <SingleHeader post={{ ...post }} hiddenDesc />
           {!featuredImage?.sourceUrl && (
-            <div className="my-5 border-b border-neutral-200 dark:border-neutral-800 "></div>
+            <div className="my-5 border-b border-neutral-200 dark:border-neutral-800"></div>
+          )}
+          {/* Prikaz "Verifikovan" natpisa ako je autor verifikovan */}
+          {isVerified && (
+            <div className="text-center text-green-500 font-semibold text-lg mt-4">
+              Verifikovan korisnik
+            </div>
           )}
         </div>
       </header>
 
-
       <SingleRelatedPosts2
-          posts={relatedPosts}
-          postDatabaseId={databaseId}
+        posts={relatedPosts}
+        postDatabaseId={databaseId}
       />
 
       {/* FEATURED IMAGE */}
