@@ -8,18 +8,6 @@ import { gql, useQuery } from '@apollo/client';
 import useGetPostsNcmazMetaByIds from "@/hooks/useGetPostsNcmazMetaByIds";
 import { TPostCard } from '@/components/Card2/Card2';
 
-export const GET_VERIFIED_USERS = gql`
-  query GetVerifiedUsers {
-    users {
-      nodes {
-        id
-        name
-        isVerified
-      }
-    }
-  }
-`;
-
 interface Props extends SingleType1Props {}
 
 const SingleType2: FC<Props> = ({ post }) => {
@@ -51,8 +39,6 @@ const SingleType2: FC<Props> = ({ post }) => {
   const imgWidth = featuredImage?.mediaDetails?.width || 1000;
   const imgHeight = featuredImage?.mediaDetails?.height || 750;
 
-  // Provera da li je autor verifikovan
-  const isVerified = author?.isVerified;
 
   return (
     <div className={`pt-8 lg:pt-16`}>
@@ -63,12 +49,7 @@ const SingleType2: FC<Props> = ({ post }) => {
           {!featuredImage?.sourceUrl && (
             <div className="my-5 border-b border-neutral-200 dark:border-neutral-800"></div>
           )}
-          {/* Prikaz "Verifikovan" natpisa ako je autor verifikovan */}
-          {isVerified && (
-            <div className="text-center text-green-500 font-semibold text-lg mt-4">
-              Verifikovan korisnik
-            </div>
-          )}
+         
         </div>
       </header>
 
